@@ -1,0 +1,12 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/weekly-reports",
+      "schedule": "0 6 * * 1"
+    },
+    {
+      "path": "/api/cron/report-retention",
+      "schedule": "0 3 * * *"
+    }
+  ]
+}
