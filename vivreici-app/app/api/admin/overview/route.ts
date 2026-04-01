@@ -142,7 +142,7 @@ export async function GET(request: Request) {
       )
 
       topEvents = Object.entries(eventsCountByName)
-        .map(([eventName, count: eventCount]) => ({
+        .map(([eventName, eventCount]) => ({
           eventName,
           count: eventCount,
         }))
