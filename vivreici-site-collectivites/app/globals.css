@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+/*
+ * Thème aligné sur vivreici-collectivites2/src/index.css (mode clair).
+ */
+:root {
+  --background: oklch(from hsl(0 0% 100%) l c h);
+  --foreground: oklch(from hsl(220 20% 20%) l c h);
+  --card: oklch(from hsl(0 0% 100%) l c h);
+  --card-foreground: oklch(from hsl(220 20% 20%) l c h);
+  --popover: oklch(from hsl(0 0% 100%) l c h);
+  --popover-foreground: oklch(from hsl(220 20% 20%) l c h);
+  --primary: oklch(from hsl(215 80% 45%) l c h);
+  --primary-foreground: oklch(from hsl(0 0% 100%) l c h);
+  --secondary: oklch(from hsl(45 95% 55%) l c h);
+  --secondary-foreground: oklch(from hsl(220 20% 15%) l c h);
+  --muted: oklch(from hsl(215 20% 96%) l c h);
+  --muted-foreground: oklch(from hsl(220 10% 50%) l c h);
+  --accent: oklch(from hsl(45 95% 55%) l c h);
+  --accent-foreground: oklch(from hsl(220 20% 15%) l c h);
+  --destructive: oklch(from hsl(0 84.2% 60.2%) l c h);
+  --destructive-foreground: oklch(from hsl(210 40% 98%) l c h);
+  --border: oklch(from hsl(215 20% 90%) l c h);
+  --input: oklch(from hsl(215 20% 90%) l c h);
+  --ring: oklch(from hsl(215 80% 45%) l c h);
+  --section-alt: oklch(from hsl(215 25% 97%) l c h);
+  --yellow-light: oklch(from hsl(45 100% 96%) l c h);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@layer components {
+  .section-padding {
+    @apply px-4 py-16 md:px-8 md:py-24 lg:px-16;
+  }
+
+  .container-landing {
+    @apply mx-auto max-w-6xl;
+  }
+
+  /* Dégradé bleu très léger (hero + CTA final) */
+  .gradient-hero {
+    background: linear-gradient(
+      145deg,
+      oklch(from hsl(215 42% 93%) l c h) 0%,
+      oklch(from hsl(218 38% 96%) l c h) 45%,
+      oklch(from hsl(212 32% 97.5%) l c h) 100%
+    );
+  }
+
+  /* Texte lisible sur fond bleu très clair (titres / corps / accents type « or » plus soutenus que le jaune vif) */
+  .text-on-hero-title {
+    color: oklch(from hsl(220 28% 14%) l c h);
+  }
+
+  .text-on-hero-body {
+    color: oklch(from hsl(220 20% 28%) l c h);
+  }
+
+  .btn-outline-on-hero {
+    display: inline-flex;
+    height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.375rem;
+    border-width: 2px;
+    border-style: solid;
+    border-color: oklch(from hsl(215 72% 36%) l c h);
+    background-color: transparent;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    color: oklch(from hsl(215 78% 27%) l c h);
+    transition-property: color, background-color, border-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+
+  .btn-outline-on-hero:hover {
+    background-color: oklch(from hsl(215 80% 45%) l c h / 0.12);
+    border-color: oklch(from hsl(215 78% 32%) l c h);
+  }
+
+  .bg-section-alt {
+    background-color: var(--section-alt);
+  }
+
+  .bg-section-yellow {
+    background-color: var(--yellow-light);
+  }
+
+  /* Alias comme sur collectivites2 (section-alt / section-yellow) */
+  .section-alt {
+    background-color: var(--section-alt);
+  }
+
+  .section-yellow {
+    background-color: var(--yellow-light);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+}

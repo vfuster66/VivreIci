@@ -41,6 +41,7 @@ Afin de garder une documentation claire et sans redondance, le projet est docume
 
 - [**Dossier de Conception & Roadmap (`roadmap.md`)**](roadmap.md) : Vision détaillée, découpage en phases, stratégie de lancement et architecture de données (SQL).
 - **Design System & UX (`design.md`)** : Charte graphique, principes d'interface, parcours utilisateurs (onboarding, signalement) et gestion des états visuels.
+- [**Applications Next.js (`docs/APPLICATIONS.md`)**](docs/APPLICATIONS.md) : tableau des apps, ports, auth, variables ; **fiches détaillées** par app dans [`docs/apps/`](docs/apps/) (rôle, périmètre fonctionnel, limites, fichiers clés).
 
 ## 💻 Stack Technique
 
